@@ -1,0 +1,18 @@
+.custom-design p {
+  border: 1px solid rgba(192, 204, 218, 0.1);
+  background: linear-gradient(
+    90deg,
+    rgba(192, 204, 218, 0.1) 0%,
+    rgba(192, 204, 218, 0.3) 50.38%,
+    rgba(192, 204, 218, 0.1) 100%
+  );
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.custom-design h6 {
+  font-size: 12px;
+}
+#not-found {
+  display: none;
+}
