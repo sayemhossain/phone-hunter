@@ -25,8 +25,8 @@ const notFound = (message) => {
   const error = document.getElementById("result");
   const div = document.createElement("div");
   div.innerHTML = `
-    <h4 class="text-center text-light p-5 bg-danger rounded">${message}</h4>
-    `;
+  <h4 class="text-center text-light p-5 bg-danger rounded">${message}</h4>
+  `;
   error.appendChild(div);
 };
 // this is for display phone
@@ -39,15 +39,15 @@ const displayPhones = (allPhones) => {
     for (const phone of phones) {
       const div = document.createElement("div");
       div.innerHTML = `
-        <div class="card text-center text-dark my-4" style="height:35rem; width:22rem">
-                <img src="${phone.image}" class="card-img-top img-fluid  p-4" style="height:400px" alt="...">
-                <div class="card-body bg-light">
-                  <h5 class="card-title text-danger">${phone.phone_name}</h5>
-                  <p class="card-title">Brand : ${phone.brand}</p>
-                  <button onclick="showDetails('${phone.slug}')" class="btn btn-danger">More Info</button>
-                </div>
-        </div>
-        `;
+      <div class="card text-center text-dark my-4 d-flex justify-content-center" style="height:35rem; width:22rem">
+              <img src="${phone.image}" class="card-img-top img-fluid  p-4" style="height:400px" alt="...">
+              <div class="card-body bg-light">
+                <h5 class="card-title text-danger">${phone.phone_name}</h5>
+                <p class="card-title">Brand : ${phone.brand}</p>
+                <button onclick="showDetails('${phone.slug}')" class="btn btn-danger">More Info</button>
+              </div>
+      </div>
+      `;
       searchResult.appendChild(div);
     }
   }
@@ -64,63 +64,61 @@ const displayPhoneDetails = (phoneDetails) => {
   showDetails.textContent = ""; //this is for clearing previous search result
   const div = document.createElement("div");
   div.innerHTML = `
-      <div class="card text-dark my-4 mx-auto " style=" width: 50rem">
-      <img src="${
-        phoneDetails.data.image
-      }" class="card-img-top img-fluid mx-auto  p-4" style="height:250px; width:250px" alt="...">
-      <div class="card-body bg-light  custom-design">
-                <h4 class="card-title text-danger  text-center">${
-                  phoneDetails.data.name
-                }</h4>
-                <h6 class="card-text text-center">${
-                  phoneDetails.data.releaseDate
-                    ? phoneDetails.data.releaseDate
-                    : "Release date unavaiable"
-                }</h6>
-                <h6 class="card-title text-primary text-center"> ${
-                  phoneDetails.data.brand
-                }</h6>
-                <hr>
-  
-                <h5 class="text-center text-uppercase">main features</h5>
-                <p class="card-text"><span class="fw-bold">Storage :</span> ${
-                  phoneDetails.data.mainFeatures.storage
-                }</p>
-                <p class="card-text"><span class="fw-bold">Display Size :</span> ${
-                  phoneDetails.data.mainFeatures.displaySize
-                }</p>
-                <p class="card-text"><span class="fw-bold">ChipSet :</span> ${
-                  phoneDetails.data.mainFeatures.chipSet
-                }</p>
-                <p class="card-text"><span class="fw-bold">Memory :</span> ${
-                  phoneDetails.data.mainFeatures.memory
-                }</p>
-                <p class="card-text"><span class="fw-bold">Sensors :</span> ${
-                  phoneDetails.data.mainFeatures.sensors
-                }</p>
-  
-                <h5 class="text-center text-uppercase">other features</h5>
-                <p class="card-text"><span class="fw-bold">WLAN:</span> ${
-                  phoneDetails.data.others.WLAN
-                }</p>
-                <p class="card-text"><span class="fw-bold">Bluetooth :</span> ${
-                  phoneDetails.data.others.Bluetooth
-                }</p>
-                <p class="card-text"><span class="fw-bold">GPS :</span> ${
-                  phoneDetails.data.others.GPS
-                }</p>
-                <p class="card-text"><span class="fw-bold">NFC :</span> ${
-                  phoneDetails.data.others.NFC
-                }</p>
-                <p class="card-text"><span class="fw-bold">Radio :</span> ${
-                  phoneDetails.data.others.Radio
-                }</p>
-                <p class="card-text"><span class="fw-bold">USB :</span> ${
-                  phoneDetails.data.others.USB
-                }</p>
-                <hr>
-              </div>
-      </div>
-      `;
+    <div class="card text-dark my-4 mx-auto " >
+    <img src="${
+      phoneDetails.data.image
+    }" class="card-img-top img-fluid mx-auto  p-4" style="height:250px; width:250px" alt="...">
+    <div class="card-body bg-light  custom-design">
+              <h4 class="card-title text-danger  text-center">${
+                phoneDetails.data.name
+              }</h4>
+              <h6 class="card-text text-center">${
+                phoneDetails.data.releaseDate
+                  ? phoneDetails.data.releaseDate
+                  : "Release date unavaiable"
+              }</h6>
+              <h6 class="card-title text-primary text-center"> ${
+                phoneDetails.data.brand
+              }</h6>
+              <hr>
+              <h5 class="text-center text-uppercase">main features</h5>
+              <p class="card-text"><span class="fw-bold">Storage :</span> ${
+                phoneDetails.data.mainFeatures.storage
+              }</p>
+              <p class="card-text"><span class="fw-bold">Display Size :</span> ${
+                phoneDetails.data.mainFeatures.displaySize
+              }</p>
+              <p class="card-text"><span class="fw-bold">ChipSet :</span> ${
+                phoneDetails.data.mainFeatures.chipSet
+              }</p>
+              <p class="card-text"><span class="fw-bold">Memory :</span> ${
+                phoneDetails.data.mainFeatures.memory
+              }</p>
+              <p class="card-text"><span class="fw-bold">Sensors :</span> ${
+                phoneDetails.data.mainFeatures.sensors
+              }</p>
+              <h5 class="text-center text-uppercase">other features</h5>
+              <p class="card-text"><span class="fw-bold">WLAN:</span> ${
+                phoneDetails.data.others.WLAN
+              }</p>
+              <p class="card-text"><span class="fw-bold">Bluetooth :</span> ${
+                phoneDetails.data.others.Bluetooth
+              }</p>
+              <p class="card-text"><span class="fw-bold">GPS :</span> ${
+                phoneDetails.data.others.GPS
+              }</p>
+              <p class="card-text"><span class="fw-bold">NFC :</span> ${
+                phoneDetails.data.others.NFC
+              }</p>
+              <p class="card-text"><span class="fw-bold">Radio :</span> ${
+                phoneDetails.data.others.Radio
+              }</p>
+              <p class="card-text"><span class="fw-bold">USB :</span> ${
+                phoneDetails.data.others.USB
+              }</p>
+              <hr>
+            </div>
+    </div>
+    `;
   showDetails.appendChild(div);
 };
